@@ -1,4 +1,4 @@
-from src import hitung_ip_b, hitung_ip_c
+from src import ip_b, ip_c
 import os
 
 def banner():
@@ -27,3 +27,4 @@ def menu():
 
 if __name__ == "__main__":
     menu()
+
