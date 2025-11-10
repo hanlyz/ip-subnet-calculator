@@ -1,5 +1,8 @@
 import os
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def calculate_b():
     '''
     ok4_32 = 1
@@ -12,7 +15,7 @@ def calculate_b():
     ok4_26 = 128
     '''
 
-    os.system('cls')
+    clear_screen()
     question_input = input("Enter Class B IP (example: 172.80.50.150/18): ")
     question_ip, block_ip = question_input.split('/')
     block_ip = int(block_ip)
@@ -43,7 +46,7 @@ def calculate_b():
     subnetmask = ip_total - total_hosts
     octets[2] = str(subnetmask)
 
-    os.system('cls')
+    clear_screen()
     print("==" * 15)
     print(f"Question: {question_ip}/{block_ip}")
 
@@ -80,3 +83,4 @@ def calculate_b():
     print(f"             = {subnetmask}")
     print(f"Subnetmask = 255.255.{subnetmask}.0 <---")
     print()
+
