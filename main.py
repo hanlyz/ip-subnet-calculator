@@ -26,10 +26,11 @@ def menu():
         ip_c.calculate_c()
     else:
         print("Invalid choice. Please try again.")
-        menu()
+    menu()
 
 if __name__ == "__main__":
     menu()
+
 
 
 
