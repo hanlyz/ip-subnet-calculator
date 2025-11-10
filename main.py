@@ -1,6 +1,9 @@
 from src import ip_b, ip_c
 import os
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def banner():
     print(r"""
      __  ____     ___  __   _  _  __ _  ____  
@@ -11,7 +14,7 @@ def banner():
     """)
 
 def menu():
-    os.system('cls')
+    clear_screen()
     banner()
     print("Select an option:")
     print("1. Calculate IP Class B")
@@ -27,5 +30,6 @@ def menu():
 
 if __name__ == "__main__":
     menu()
+
 
 
