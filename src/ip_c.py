@@ -16,66 +16,68 @@ def calculate_c():
     '''
 
     clear_screen()
-    soal_input = input("Masukkan soal IP C (contoh: 192.180.35.220/18): ")
-    soal_ip, block_ip = soal_input.split('/')
+    question_input = input("Enter Class C IP (example: 192.180.35.220/27): ")
+    question_ip, block_ip = question_input.split('/')
     block_ip = int(block_ip)
 
-    jumlah_host = 2 ** (32 - block_ip)
+    total_hosts = 2 ** (32 - block_ip)
 
-    # ========= hitung block subnet
-    oktets = soal_ip.split(".")
-    okt4 = int(oktets[3])
-    hasil_net = okt4 / jumlah_host
+    # ========= calculate subnet block
+    octets = question_ip.split(".")
+    oct4 = int(octets[3])
+    net_calc = oct4 / total_hosts
 
-    # ========= hitung NET ID
-    hasil_netid = int(hasil_net)
-    net_id = hasil_netid * jumlah_host
-    oktets[3] = str(net_id)
-    network_id = ".".join(oktets)
+    # ========= calculate NET ID
+    net_calc_int = int(net_calc)
+    net_id = net_calc_int * total_hosts
+    octets[3] = str(net_id)
+    network_id = ".".join(octets)
 
-    # ========= hitung Broadcast
-    broadcast = net_id + jumlah_host - 1
-    oktets[3] = str(broadcast)
-    broadcast_hasil = ".".join(oktets)
+    # ========= calculate Broadcast
+    broadcast = net_id + total_hosts - 1
+    octets[3] = str(broadcast)
+    broadcast_result = ".".join(octets)
 
-    # ========= hitung Subnetmask
+    # ========= calculate Subnetmask
     ip_total = 256
-    subnetmask = ip_total - jumlah_host
+    subnetmask = ip_total - total_hosts
 
     clear_screen()
     print("==" * 15)
-    print(f"Soal: {soal_ip}/{block_ip}")
+    print(f"Question: {question_ip}/{block_ip}")
 
     print("==" * 15)
-    print(f"  oktet 4     {okt4}")
-    print(f"----------- = ----- = {hasil_net}")
-    print(f"jumlah host   {jumlah_host}")
+    print(f"  Octet 4     {oct4}")
+    print(f"----------- = ----- = {net_calc}")
+    print(f"Total hosts   {total_hosts}")
     print("==" * 15)
     print()
 
-    # output Hitung NET ID
-    print("==== ( Hitung NET ID )")
-    print("Net ID = Hasil bagi x jumlah host")
-    print(f"       = {hasil_netid} x {jumlah_host}")
+    # output Calculate NET ID
+    print("==== ( Calculate NET ID )")
+    print("Net ID = Quotient x Total Hosts")
+    print(f"       = {net_calc_int} x {total_hosts}")
     print(f"       = {net_id}")
     print(f"Net ID = {network_id} <---")
     print()
 
-    # output Hitung Broadcast
-    print("==== ( Hitung Broadcast )")
-    print("Broadcast  = IP Awal + jumlah host - 1")
-    print(f"           = {net_id} + {jumlah_host} - 1")
+    # output Calculate Broadcast
+    print("==== ( Calculate Broadcast )")
+    print("Broadcast  = Starting IP + Total Hosts - 1")
+    print(f"           = {net_id} + {total_hosts} - 1")
     print(f"           = {broadcast}")
-    print(f"Broadcast = {broadcast_hasil} <---")
+    print(f"Broadcast = {broadcast_result} <---")
     print()
 
-    # output Hitung Subnetmask
-    print("==== ( Hitung Subnetmask )")
-    print("Subnetmask  = IP Total - jumlah host")
-    print(f"           = {ip_total} - {jumlah_host}")
+    # output Calculate Subnetmask
+    print("==== ( Calculate Subnetmask )")
+    print("Subnetmask  = IP Total - Total Hosts")
+    print(f"           = {ip_total} - {total_hosts}")
     print(f"           = {subnetmask}")
     print(f"Subnetmask = 255.255.255.{subnetmask} <---")
     print()
 
     input("Press Enter to go back...")
     return
+
+
