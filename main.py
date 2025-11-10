@@ -21,15 +21,16 @@ def menu():
     print("2. Calculate IP Class C")
     choice = input("Enter your choice (1 or 2): ")
     if choice == '1':
-        hitung_ip_b.calculate_b()
+        ip_b.calculate_b()
     elif choice == '2':
-        hitung_ip_c.calculate_c()
+        ip_c.calculate_c()
     else:
         print("Invalid choice. Please try again.")
         menu()
 
 if __name__ == "__main__":
     menu()
+
 
 
 
