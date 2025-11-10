@@ -1,49 +1,60 @@
-# 🧮 IP Subnet Calculator (Class C)
+# 🧮 IP Subnet Calculator 
 
-A simple Python script to calculate **Network ID**, **Broadcast Address**, and **Subnet Mask** for **Class C IP addresses**.  
-This script is designed for students learning subnetting or anyone who wants a quick command-line subnet calculator.
+A simple Python script to calculate **Network ID**, **Broadcast Address**, and **Subnet Mask** for **Class B and Class C** IP addresses.  
+This project is designed for networking students learning **subnetting** or anyone who needs a simple command-line subnet calculator.
 
 ---
 
 ## 🚀 Features
 
-- Supports **Class C** IPv4 addresses (e.g., `192.180.35.220/27`)
+- Supports **Class B** and **Class C** IPv4 addresses  
 - Automatically calculates:
-  - Network ID
-  - Broadcast Address
-  - Subnet Mask
-  - Number of Hosts per Subnet
-- Clear and step-by-step explanation of the calculation
+  - Network ID  
+  - Broadcast Address  
+  - Subnet Mask  
+  - Number of Hosts per Subnet  
+- Provides **step-by-step explanations** of all calculations  
 - Works on **Windows**, **Linux**, and **macOS**
 
 ---
 
 ## 🧰 Requirements
 
-- Python 3.x
-- Works on any terminal that supports Python
+- Python 3.x  
+- Any terminal that supports Python
 
 ---
 
-## ⚙️ How to Use
+## ⚙️ How to Run
 
-1. Clone or download this repository  
+1. Clone or download this repository:
    ```bash
    git clone https://github.com/hanlyz/ip-subnet-calculator.git
    cd ip-subnet-calculator
    ```
 
-2. Run the script:
+2. Run the program:
    ```bash
    python main.py
    ```
 
-3. Enter your IP address and subnet prefix when prompted:
+3. Choose one of the available options:
    ```
-   Enter Class C IP (example: 192.180.35.220/27):
+   1. Calculate IP Class B
+   2. Calculate IP Class C
+   3. Exit
    ```
 
-4. The program will show the results:
+4. Enter the IP address and prefix when prompted:
+   ```
+   Enter Class B IP (example: 172.80.50.150/18)
+   ```
+   or
+   ```
+   Enter Class C IP (example: 192.180.35.220/27)
+   ```
+
+5. The program will display detailed results:
    ```
    ==============================
    Question: 192.180.35.220/27
@@ -72,30 +83,29 @@ This script is designed for students learning subnetting or anyone who wants a q
    Subnetmask = 255.255.255.224 <---
    ```
 
-5. Press **Enter** to return or exit.
+6. Press **Enter** to return to the menu or **Exit** the program.
 
 ---
 
-## 🧩 Example Input / Output
+## 🧩 Example Comparison
 
-| Input IP | Prefix | Network ID | Broadcast | Subnet Mask | Hosts |
-|-----------|---------|-------------|------------|--------------|--------|
-| 192.180.35.220 | /27 | 192.180.35.192 | 192.180.35.223 | 255.255.255.224 | 32 |
-| 192.168.1.10 | /29 | 192.168.1.8 | 192.168.1.15 | 255.255.255.248 | 8 |
+| Input IP | Class | Prefix | Network ID | Broadcast | Subnet Mask | Hosts |
+|-----------|--------|---------|-------------|------------|--------------|--------|
+| 172.80.50.150 | B | /18 | 172.80.0.0 | 172.80.63.255 | 255.255.192.0 | 16 |
+| 192.180.35.220 | C | /27 | 192.180.35.192 | 192.180.35.223 | 255.255.255.224 | 32 |
 
 ---
 
 ## 🧠 Notes
 
-- The script focuses on **Class C IP calculations** (first octet 192–223).
-- It’s made for **learning and demonstration** purposes — not for production networking tools.
-- Output is designed to be **educational**, showing each calculation step.
+- **Class B:** First octet 128–191  
+- **Class C:** First octet 192–223  
+- This tool is for **educational purposes** and demonstrations — not for production networking tools.  
+- The output is designed to be **easy to understand** and **educational**.
 
 ---
 
 ## 👨‍💻 Author
 
-- **Created by:** Farhan
-- **GitHub:** hanlyz
-
----
+- **Created by:** Farhan  
+- **GitHub:** [hanlyz](https://github.com/hanlyz)
