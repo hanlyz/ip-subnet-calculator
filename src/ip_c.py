@@ -77,3 +77,5 @@ def calculate_c():
     print(f"Subnetmask = 255.255.255.{subnetmask} <---")
     print()
 
+    input("Press Enter to go back...")
+    return
