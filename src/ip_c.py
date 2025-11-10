@@ -1,5 +1,8 @@
 import os
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def calculate_c():
     '''
     ok4_32 = 1
@@ -12,8 +15,7 @@ def calculate_c():
     ok4_26 = 128
     '''
 
-    os.system('cls')
-
+    clear_screen()
     soal_input = input("Masukkan soal IP C (contoh: 192.180.35.220/18): ")
     soal_ip, block_ip = soal_input.split('/')
     block_ip = int(block_ip)
@@ -40,6 +42,7 @@ def calculate_c():
     ip_total = 256
     subnetmask = ip_total - jumlah_host
 
+    clear_screen()
     print("==" * 15)
     print(f"Soal: {soal_ip}/{block_ip}")
 
@@ -73,3 +76,4 @@ def calculate_c():
     print(f"           = {subnetmask}")
     print(f"Subnetmask = 255.255.255.{subnetmask} <---")
     print()
+
