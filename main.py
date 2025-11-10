@@ -19,17 +19,25 @@ def menu():
     print("Select an option:")
     print("1. Calculate IP Class B")
     print("2. Calculate IP Class C")
-    choice = input("Enter your choice (1 or 2): ")
+    print("3. Exit")
+    choice = input("Enter your choice (1-3): ")
     if choice == '1':
         ip_b.calculate_b()
+        menu()
     elif choice == '2':
         ip_c.calculate_c()
+        menu()
+    elif choice == '3':
+        clear_screen()
+        print("Goodbye! 👋")
+        exit()
     else:
         print("Invalid choice. Please try again.")
     menu()
 
 if __name__ == "__main__":
     menu()
+
 
 
 
